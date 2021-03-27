@@ -49,7 +49,7 @@ public:
         // Сначала соберите информацию об обновлениях в отдельном временном словаре, а потом примените их к основному словарю.
         vector<int> updated_tasks(4);
         //Рассмотреть первые task_count задач и перевести каждую из них в следующий статус в соответствии с естественным порядком: NEW → IN_PROGRESS → TESTING → DONE.
-        int counter = 0;
+        int counter = 0; // счетчик нужен для доступа к статусам, я пользуюсь тем, что статусы в векторах ordered_untouched_tasks и updated_tasks упорядочены
         for (const int tasks : temp_ordered_untouched_tasks) {
             if (tasks > 0) {
                 int diff = tasks - task_count;
